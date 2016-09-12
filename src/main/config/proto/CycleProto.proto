@@ -1,0 +1,27 @@
+package common;
+
+option java_package = "org.test.proto";
+
+message InnerBean {
+
+    optional int64 value1 = 1;
+
+    optional int64 value2 = 2;
+
+    optional int64 value3 = 3;
+
+    optional int64 value4 = 4;
+
+    optional int64 value5 = 5;
+
+}
+
+message OuterBean {
+
+    optional InnerBean value1 = 1;
+
+    optional InnerBean value2 = 2;
+
+    optional InnerBean value3 = 3;
+
+}

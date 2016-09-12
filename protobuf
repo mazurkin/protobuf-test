@@ -1,0 +1,8 @@
+#!/bin/bash
+
+PROTOC="/opt/protobuf/protobuf-2.6.1/protoc"
+
+for SOURCE in src/main/config/proto/*.proto
+do
+    $PROTOC "--proto_path=src/main/config/proto/" "--java_out=src/main/java/" $SOURCE
+done
