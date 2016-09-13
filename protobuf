@@ -4,5 +4,6 @@ PROTOC="/opt/protobuf/protobuf-3.0.2/protoc"
 
 for SOURCE in src/main/config/proto/*.proto
 do
+    $PROTOC "--proto_path=src/main/config/proto/" "--javanano_out=src/main/java/" $SOURCE
     $PROTOC "--proto_path=src/main/config/proto/" "--java_out=src/main/java/" $SOURCE
 done

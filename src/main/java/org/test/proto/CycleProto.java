@@ -2277,8 +2277,8 @@ public final class CycleProto {
       "lue4\030\004 \001(\003\022\016\n\006value5\030\005 \001(\t\022\035\n\treference\030" +
       "\006 \001(\0132\n.InnerBean\"\\\n\tOuterBean\022\031\n\005bean1\030" +
       "\001 \001(\0132\n.InnerBean\022\031\n\005bean2\030\002 \001(\0132\n.Inner" +
-      "Bean\022\031\n\005beans\030\003 \003(\0132\n.InnerBeanB\034\n\016org.t" +
-      "est.protoB\nCycleProto"
+      "Bean\022\031\n\005beans\030\003 \003(\0132\n.InnerBeanB\036\n\016org.t" +
+      "est.protoB\nCycleProtoH\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
