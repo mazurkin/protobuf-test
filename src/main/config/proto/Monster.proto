@@ -1,0 +1,608 @@
+package common;
+
+option java_package = "org.test.proto";
+option java_outer_classname = "MonsterProto";
+
+message Monster {
+
+    optional string value001 = 1;
+
+    optional int32  value002 = 2;
+
+    optional int64  value003 = 3;
+
+    optional double value004 = 4;
+
+    optional string value005 = 5;
+
+    optional int32  value006 = 6;
+
+    optional int64  value007 = 7;
+
+    optional double value008 = 8;
+
+    optional string value009 = 9;
+
+    optional int32  value010 = 10;
+
+    optional int64  value011 = 11;
+
+    optional double value012 = 12;
+
+    optional string value013 = 13;
+
+    optional int32  value014 = 14;
+
+    optional int64  value015 = 15;
+
+    optional double value016 = 16;
+
+    optional string value017 = 17;
+
+    optional int32  value018 = 18;
+
+    optional int64  value019 = 19;
+
+    optional double value020 = 20;
+
+    optional string value021 = 21;
+
+    optional int32  value022 = 22;
+
+    optional int64  value023 = 23;
+
+    optional double value024 = 24;
+
+    optional string value025 = 25;
+
+    optional int32  value026 = 26;
+
+    optional int64  value027 = 27;
+
+    optional double value028 = 28;
+
+    optional string value029 = 29;
+
+    optional int32  value030 = 30;
+
+    optional int64  value031 = 31;
+
+    optional double value032 = 32;
+
+    optional string value033 = 33;
+
+    optional int32  value034 = 34;
+
+    optional int64  value035 = 35;
+
+    optional double value036 = 36;
+
+    optional string value037 = 37;
+
+    optional int32  value038 = 38;
+
+    optional int64  value039 = 39;
+
+    optional double value040 = 40;
+
+    optional string value041 = 41;
+
+    optional int32  value042 = 42;
+
+    optional int64  value043 = 43;
+
+    optional double value044 = 44;
+
+    optional string value045 = 45;
+
+    optional int32  value046 = 46;
+
+    optional int64  value047 = 47;
+
+    optional double value048 = 48;
+
+    optional string value049 = 49;
+
+    optional int32  value050 = 50;
+
+    optional int64  value051 = 51;
+
+    optional double value052 = 52;
+
+    optional string value053 = 53;
+
+    optional int32  value054 = 54;
+
+    optional int64  value055 = 55;
+
+    optional double value056 = 56;
+
+    optional string value057 = 57;
+
+    optional int32  value058 = 58;
+
+    optional int64  value059 = 59;
+
+    optional double value060 = 60;
+
+    optional string value061 = 61;
+
+    optional int32  value062 = 62;
+
+    optional int64  value063 = 63;
+
+    optional double value064 = 64;
+
+    optional string value065 = 65;
+
+    optional int32  value066 = 66;
+
+    optional int64  value067 = 67;
+
+    optional double value068 = 68;
+
+    optional string value069 = 69;
+
+    optional int32  value070 = 70;
+
+    optional int64  value071 = 71;
+
+    optional double value072 = 72;
+
+    optional string value073 = 73;
+
+    optional int32  value074 = 74;
+
+    optional int64  value075 = 75;
+
+    optional double value076 = 76;
+
+    optional string value077 = 77;
+
+    optional int32  value078 = 78;
+
+    optional int64  value079 = 79;
+
+    optional double value080 = 80;
+
+    optional string value081 = 81;
+
+    optional int32  value082 = 82;
+
+    optional int64  value083 = 83;
+
+    optional double value084 = 84;
+
+    optional string value085 = 85;
+
+    optional int32  value086 = 86;
+
+    optional int64  value087 = 87;
+
+    optional double value088 = 88;
+
+    optional string value089 = 89;
+
+    optional int32  value090 = 90;
+
+    optional int64  value091 = 91;
+
+    optional double value092 = 92;
+
+    optional string value093 = 93;
+
+    optional int32  value094 = 94;
+
+    optional int64  value095 = 95;
+
+    optional double value096 = 96;
+
+    optional string value097 = 97;
+
+    optional int32  value098 = 98;
+
+    optional int64  value099 = 99;
+
+    optional double value100 = 100;
+
+    optional string value101 = 101;
+
+    optional int32  value102 = 102;
+
+    optional int64  value103 = 103;
+
+    optional double value104 = 104;
+
+    optional string value105 = 105;
+
+    optional int32  value106 = 106;
+
+    optional int64  value107 = 107;
+
+    optional double value108 = 108;
+
+    optional string value109 = 109;
+
+    optional int32  value110 = 110;
+
+    optional int64  value111 = 111;
+
+    optional double value112 = 112;
+
+    optional string value113 = 113;
+
+    optional int32  value114 = 114;
+
+    optional int64  value115 = 115;
+
+    optional double value116 = 116;
+
+    optional string value117 = 117;
+
+    optional int32  value118 = 118;
+
+    optional int64  value119 = 119;
+
+    optional double value120 = 120;
+
+    optional string value121 = 121;
+
+    optional int32  value122 = 122;
+
+    optional int64  value123 = 123;
+
+    optional double value124 = 124;
+
+    optional string value125 = 125;
+
+    optional int32  value126 = 126;
+
+    optional int64  value127 = 127;
+
+    optional double value128 = 128;
+
+    optional string value129 = 129;
+
+    optional int32  value130 = 130;
+
+    optional int64  value131 = 131;
+
+    optional double value132 = 132;
+
+    optional string value133 = 133;
+
+    optional int32  value134 = 134;
+
+    optional int64  value135 = 135;
+
+    optional double value136 = 136;
+
+    optional string value137 = 137;
+
+    optional int32  value138 = 138;
+
+    optional int64  value139 = 139;
+
+    optional double value140 = 140;
+
+    optional string value141 = 141;
+
+    optional int32  value142 = 142;
+
+    optional int64  value143 = 143;
+
+    optional double value144 = 144;
+
+    optional string value145 = 145;
+
+    optional int32  value146 = 146;
+
+    optional int64  value147 = 147;
+
+    optional double value148 = 148;
+
+    optional string value149 = 149;
+
+    optional int32  value150 = 150;
+
+    optional int64  value151 = 151;
+
+    optional double value152 = 152;
+
+    optional string value153 = 153;
+
+    optional int32  value154 = 154;
+
+    optional int64  value155 = 155;
+
+    optional double value156 = 156;
+
+    optional string value157 = 157;
+
+    optional int32  value158 = 158;
+
+    optional int64  value159 = 159;
+
+    optional double value160 = 160;
+
+    optional string value161 = 161;
+
+    optional int32  value162 = 162;
+
+    optional int64  value163 = 163;
+
+    optional double value164 = 164;
+
+    optional string value165 = 165;
+
+    optional int32  value166 = 166;
+
+    optional int64  value167 = 167;
+
+    optional double value168 = 168;
+
+    optional string value169 = 169;
+
+    optional int32  value170 = 170;
+
+    optional int64  value171 = 171;
+
+    optional double value172 = 172;
+
+    optional string value173 = 173;
+
+    optional int32  value174 = 174;
+
+    optional int64  value175 = 175;
+
+    optional double value176 = 176;
+
+    optional string value177 = 177;
+
+    optional int32  value178 = 178;
+
+    optional int64  value179 = 179;
+
+    optional double value180 = 180;
+
+    optional string value181 = 181;
+
+    optional int32  value182 = 182;
+
+    optional int64  value183 = 183;
+
+    optional double value184 = 184;
+
+    optional string value185 = 185;
+
+    optional int32  value186 = 186;
+
+    optional int64  value187 = 187;
+
+    optional double value188 = 188;
+
+    optional string value189 = 189;
+
+    optional int32  value190 = 190;
+
+    optional int64  value191 = 191;
+
+    optional double value192 = 192;
+
+    optional string value193 = 193;
+
+    optional int32  value194 = 194;
+
+    optional int64  value195 = 195;
+
+    optional double value196 = 196;
+
+    optional string value197 = 197;
+
+    optional int32  value198 = 198;
+
+    optional int64  value199 = 199;
+
+    optional double value200 = 200;
+
+    optional string value201 = 201;
+
+    optional int32  value202 = 202;
+
+    optional int64  value203 = 203;
+
+    optional double value204 = 204;
+
+    optional string value205 = 205;
+
+    optional int32  value206 = 206;
+
+    optional int64  value207 = 207;
+
+    optional double value208 = 208;
+
+    optional string value209 = 209;
+
+    optional int32  value210 = 210;
+
+    optional int64  value211 = 211;
+
+    optional double value212 = 212;
+
+    optional string value213 = 213;
+
+    optional int32  value214 = 214;
+
+    optional int64  value215 = 215;
+
+    optional double value216 = 216;
+
+    optional string value217 = 217;
+
+    optional int32  value218 = 218;
+
+    optional int64  value219 = 219;
+
+    optional double value220 = 220;
+
+    optional string value221 = 221;
+
+    optional int32  value222 = 222;
+
+    optional int64  value223 = 223;
+
+    optional double value224 = 224;
+
+    optional string value225 = 225;
+
+    optional int32  value226 = 226;
+
+    optional int64  value227 = 227;
+
+    optional double value228 = 228;
+
+    optional string value229 = 229;
+
+    optional int32  value230 = 230;
+
+    optional int64  value231 = 231;
+
+    optional double value232 = 232;
+
+    optional string value233 = 233;
+
+    optional int32  value234 = 234;
+
+    optional int64  value235 = 235;
+
+    optional double value236 = 236;
+
+    optional string value237 = 237;
+
+    optional int32  value238 = 238;
+
+    optional int64  value239 = 239;
+
+    optional double value240 = 240;
+
+    optional string value241 = 241;
+
+    optional int32  value242 = 242;
+
+    optional int64  value243 = 243;
+
+    optional double value244 = 244;
+
+    optional string value245 = 245;
+
+    optional int32  value246 = 246;
+
+    optional int64  value247 = 247;
+
+    optional double value248 = 248;
+
+    optional string value249 = 249;
+
+    optional int32  value250 = 250;
+
+    optional int64  value251 = 251;
+
+    optional double value252 = 252;
+
+    optional string value253 = 253;
+
+    optional int32  value254 = 254;
+
+    optional int64  value255 = 255;
+
+    optional double value256 = 256;
+
+    optional string value257 = 257;
+
+    optional int32  value258 = 258;
+
+    optional int64  value259 = 259;
+
+    optional double value260 = 260;
+
+    optional string value261 = 261;
+
+    optional int32  value262 = 262;
+
+    optional int64  value263 = 263;
+
+    optional double value264 = 264;
+
+    optional string value265 = 265;
+
+    optional int32  value266 = 266;
+
+    optional int64  value267 = 267;
+
+    optional double value268 = 268;
+
+    optional string value269 = 269;
+
+    optional int32  value270 = 270;
+
+    optional int64  value271 = 271;
+
+    optional double value272 = 272;
+
+    optional string value273 = 273;
+
+    optional int32  value274 = 274;
+
+    optional int64  value275 = 275;
+
+    optional double value276 = 276;
+
+    optional string value277 = 277;
+
+    optional int32  value278 = 278;
+
+    optional int64  value279 = 279;
+
+    optional double value280 = 280;
+
+    optional string value281 = 281;
+
+    optional int32  value282 = 282;
+
+    optional int64  value283 = 283;
+
+    optional double value284 = 284;
+
+    optional string value285 = 285;
+
+    optional int32  value286 = 286;
+
+    optional int64  value287 = 287;
+
+    optional double value288 = 288;
+
+    optional string value289 = 289;
+
+    optional int32  value290 = 290;
+
+    optional int64  value291 = 291;
+
+    optional double value292 = 292;
+
+    optional string value293 = 293;
+
+    optional int32  value294 = 294;
+
+    optional int64  value295 = 295;
+
+    optional double value296 = 296;
+
+    optional string value297 = 297;
+
+    optional int32  value298 = 298;
+
+    optional int64  value299 = 299;
+
+    optional double value300 = 300;
+
+}
