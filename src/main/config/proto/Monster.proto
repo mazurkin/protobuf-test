@@ -1,4 +1,4 @@
-package common;
+syntax = "proto2";
 
 option java_package = "org.test.proto";
 option java_outer_classname = "MonsterProto";

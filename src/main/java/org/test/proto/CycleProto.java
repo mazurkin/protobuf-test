@@ -6,10 +6,16 @@ package org.test.proto;
 public final class CycleProto {
   private CycleProto() {}
   public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+
+  public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   public interface InnerBeanOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:common.InnerBean)
+      // @@protoc_insertion_point(interface_extends:InnerBean)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -63,52 +69,47 @@ public final class CycleProto {
         getValue5Bytes();
 
     /**
-     * <code>optional .common.InnerBean reference = 6;</code>
+     * <code>optional .InnerBean reference = 6;</code>
      */
     boolean hasReference();
     /**
-     * <code>optional .common.InnerBean reference = 6;</code>
+     * <code>optional .InnerBean reference = 6;</code>
      */
     org.test.proto.CycleProto.InnerBean getReference();
     /**
-     * <code>optional .common.InnerBean reference = 6;</code>
+     * <code>optional .InnerBean reference = 6;</code>
      */
     org.test.proto.CycleProto.InnerBeanOrBuilder getReferenceOrBuilder();
   }
   /**
-   * Protobuf type {@code common.InnerBean}
+   * Protobuf type {@code InnerBean}
    */
-  public static final class InnerBean extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:common.InnerBean)
+  public  static final class InnerBean extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:InnerBean)
       InnerBeanOrBuilder {
     // Use InnerBean.newBuilder() to construct.
-    private InnerBean(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private InnerBean(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private InnerBean(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final InnerBean defaultInstance;
-    public static InnerBean getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public InnerBean getDefaultInstanceForType() {
-      return defaultInstance;
+    private InnerBean() {
+      value1_ = 0L;
+      value2_ = 0L;
+      value3_ = 0L;
+      value4_ = 0L;
+      value5_ = "";
     }
 
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private InnerBean(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
+      this();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -172,7 +173,7 @@ public final class CycleProto {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -180,29 +181,14 @@ public final class CycleProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.test.proto.CycleProto.internal_static_common_InnerBean_descriptor;
+      return org.test.proto.CycleProto.internal_static_InnerBean_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.test.proto.CycleProto.internal_static_common_InnerBean_fieldAccessorTable
+      return org.test.proto.CycleProto.internal_static_InnerBean_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               org.test.proto.CycleProto.InnerBean.class, org.test.proto.CycleProto.InnerBean.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<InnerBean> PARSER =
-        new com.google.protobuf.AbstractParser<InnerBean>() {
-      public InnerBean parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InnerBean(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<InnerBean> getParserForType() {
-      return PARSER;
     }
 
     private int bitField0_;
@@ -267,7 +253,7 @@ public final class CycleProto {
     }
 
     public static final int VALUE5_FIELD_NUMBER = 5;
-    private java.lang.Object value5_;
+    private volatile java.lang.Object value5_;
     /**
      * <code>optional string value5 = 5;</code>
      */
@@ -311,32 +297,24 @@ public final class CycleProto {
     public static final int REFERENCE_FIELD_NUMBER = 6;
     private org.test.proto.CycleProto.InnerBean reference_;
     /**
-     * <code>optional .common.InnerBean reference = 6;</code>
+     * <code>optional .InnerBean reference = 6;</code>
      */
     public boolean hasReference() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>optional .common.InnerBean reference = 6;</code>
+     * <code>optional .InnerBean reference = 6;</code>
      */
     public org.test.proto.CycleProto.InnerBean getReference() {
-      return reference_;
+      return reference_ == null ? org.test.proto.CycleProto.InnerBean.getDefaultInstance() : reference_;
     }
     /**
-     * <code>optional .common.InnerBean reference = 6;</code>
+     * <code>optional .InnerBean reference = 6;</code>
      */
     public org.test.proto.CycleProto.InnerBeanOrBuilder getReferenceOrBuilder() {
-      return reference_;
+      return reference_ == null ? org.test.proto.CycleProto.InnerBean.getDefaultInstance() : reference_;
     }
 
-    private void initFields() {
-      value1_ = 0L;
-      value2_ = 0L;
-      value3_ = 0L;
-      value4_ = 0L;
-      value5_ = "";
-      reference_ = org.test.proto.CycleProto.InnerBean.getDefaultInstance();
-    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -349,7 +327,6 @@ public final class CycleProto {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         output.writeInt64(1, value1_);
       }
@@ -363,17 +340,16 @@ public final class CycleProto {
         output.writeInt64(4, value4_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(5, getValue5Bytes());
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, value5_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeMessage(6, reference_);
+        output.writeMessage(6, getReference());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
@@ -394,23 +370,101 @@ public final class CycleProto {
           .computeInt64Size(4, value4_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getValue5Bytes());
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, value5_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, reference_);
+          .computeMessageSize(6, getReference());
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.test.proto.CycleProto.InnerBean)) {
+        return super.equals(obj);
+      }
+      org.test.proto.CycleProto.InnerBean other = (org.test.proto.CycleProto.InnerBean) obj;
+
+      boolean result = true;
+      result = result && (hasValue1() == other.hasValue1());
+      if (hasValue1()) {
+        result = result && (getValue1()
+            == other.getValue1());
+      }
+      result = result && (hasValue2() == other.hasValue2());
+      if (hasValue2()) {
+        result = result && (getValue2()
+            == other.getValue2());
+      }
+      result = result && (hasValue3() == other.hasValue3());
+      if (hasValue3()) {
+        result = result && (getValue3()
+            == other.getValue3());
+      }
+      result = result && (hasValue4() == other.hasValue4());
+      if (hasValue4()) {
+        result = result && (getValue4()
+            == other.getValue4());
+      }
+      result = result && (hasValue5() == other.hasValue5());
+      if (hasValue5()) {
+        result = result && getValue5()
+            .equals(other.getValue5());
+      }
+      result = result && (hasReference() == other.hasReference());
+      if (hasReference()) {
+        result = result && getReference()
+            .equals(other.getReference());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (hasValue1()) {
+        hash = (37 * hash) + VALUE1_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getValue1());
+      }
+      if (hasValue2()) {
+        hash = (37 * hash) + VALUE2_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getValue2());
+      }
+      if (hasValue3()) {
+        hash = (37 * hash) + VALUE3_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getValue3());
+      }
+      if (hasValue4()) {
+        hash = (37 * hash) + VALUE4_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getValue4());
+      }
+      if (hasValue5()) {
+        hash = (37 * hash) + VALUE5_FIELD_NUMBER;
+        hash = (53 * hash) + getValue5().hashCode();
+      }
+      if (hasReference()) {
+        hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
+        hash = (53 * hash) + getReference().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static org.test.proto.CycleProto.InnerBean parseFrom(
@@ -436,64 +490,75 @@ public final class CycleProto {
     }
     public static org.test.proto.CycleProto.InnerBean parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static org.test.proto.CycleProto.InnerBean parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.test.proto.CycleProto.InnerBean parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.test.proto.CycleProto.InnerBean parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.test.proto.CycleProto.InnerBean parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static org.test.proto.CycleProto.InnerBean parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(org.test.proto.CycleProto.InnerBean prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
+    public static Builder newBuilder(org.test.proto.CycleProto.InnerBean prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code common.InnerBean}
+     * Protobuf type {@code InnerBean}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:common.InnerBean)
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:InnerBean)
         org.test.proto.CycleProto.InnerBeanOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.test.proto.CycleProto.internal_static_common_InnerBean_descriptor;
+        return org.test.proto.CycleProto.internal_static_InnerBean_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.test.proto.CycleProto.internal_static_common_InnerBean_fieldAccessorTable
+        return org.test.proto.CycleProto.internal_static_InnerBean_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 org.test.proto.CycleProto.InnerBean.class, org.test.proto.CycleProto.InnerBean.Builder.class);
       }
@@ -504,19 +569,16 @@ public final class CycleProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
           getReferenceFieldBuilder();
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-
       public Builder clear() {
         super.clear();
         value1_ = 0L;
@@ -530,7 +592,7 @@ public final class CycleProto {
         value5_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
         if (referenceBuilder_ == null) {
-          reference_ = org.test.proto.CycleProto.InnerBean.getDefaultInstance();
+          reference_ = null;
         } else {
           referenceBuilder_.clear();
         }
@@ -538,13 +600,9 @@ public final class CycleProto {
         return this;
       }
 
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.test.proto.CycleProto.internal_static_common_InnerBean_descriptor;
+        return org.test.proto.CycleProto.internal_static_InnerBean_descriptor;
       }
 
       public org.test.proto.CycleProto.InnerBean getDefaultInstanceForType() {
@@ -596,6 +654,32 @@ public final class CycleProto {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof org.test.proto.CycleProto.InnerBean) {
           return mergeFrom((org.test.proto.CycleProto.InnerBean)other);
@@ -627,7 +711,8 @@ public final class CycleProto {
         if (other.hasReference()) {
           mergeReference(other.getReference());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
 
@@ -644,7 +729,7 @@ public final class CycleProto {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (org.test.proto.CycleProto.InnerBean) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -858,27 +943,27 @@ public final class CycleProto {
         return this;
       }
 
-      private org.test.proto.CycleProto.InnerBean reference_ = org.test.proto.CycleProto.InnerBean.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
+      private org.test.proto.CycleProto.InnerBean reference_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
           org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder> referenceBuilder_;
       /**
-       * <code>optional .common.InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 6;</code>
        */
       public boolean hasReference() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>optional .common.InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 6;</code>
        */
       public org.test.proto.CycleProto.InnerBean getReference() {
         if (referenceBuilder_ == null) {
-          return reference_;
+          return reference_ == null ? org.test.proto.CycleProto.InnerBean.getDefaultInstance() : reference_;
         } else {
           return referenceBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .common.InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 6;</code>
        */
       public Builder setReference(org.test.proto.CycleProto.InnerBean value) {
         if (referenceBuilder_ == null) {
@@ -894,7 +979,7 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>optional .common.InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 6;</code>
        */
       public Builder setReference(
           org.test.proto.CycleProto.InnerBean.Builder builderForValue) {
@@ -908,11 +993,12 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>optional .common.InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 6;</code>
        */
       public Builder mergeReference(org.test.proto.CycleProto.InnerBean value) {
         if (referenceBuilder_ == null) {
           if (((bitField0_ & 0x00000020) == 0x00000020) &&
+              reference_ != null &&
               reference_ != org.test.proto.CycleProto.InnerBean.getDefaultInstance()) {
             reference_ =
               org.test.proto.CycleProto.InnerBean.newBuilder(reference_).mergeFrom(value).buildPartial();
@@ -927,11 +1013,11 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>optional .common.InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 6;</code>
        */
       public Builder clearReference() {
         if (referenceBuilder_ == null) {
-          reference_ = org.test.proto.CycleProto.InnerBean.getDefaultInstance();
+          reference_ = null;
           onChanged();
         } else {
           referenceBuilder_.clear();
@@ -940,7 +1026,7 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>optional .common.InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 6;</code>
        */
       public org.test.proto.CycleProto.InnerBean.Builder getReferenceBuilder() {
         bitField0_ |= 0x00000020;
@@ -948,23 +1034,24 @@ public final class CycleProto {
         return getReferenceFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .common.InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 6;</code>
        */
       public org.test.proto.CycleProto.InnerBeanOrBuilder getReferenceOrBuilder() {
         if (referenceBuilder_ != null) {
           return referenceBuilder_.getMessageOrBuilder();
         } else {
-          return reference_;
+          return reference_ == null ?
+              org.test.proto.CycleProto.InnerBean.getDefaultInstance() : reference_;
         }
       }
       /**
-       * <code>optional .common.InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 6;</code>
        */
-      private com.google.protobuf.SingleFieldBuilder<
+      private com.google.protobuf.SingleFieldBuilderV3<
           org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder> 
           getReferenceFieldBuilder() {
         if (referenceBuilder_ == null) {
-          referenceBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          referenceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder>(
                   getReference(),
                   getParentForChildren(),
@@ -973,106 +1060,134 @@ public final class CycleProto {
         }
         return referenceBuilder_;
       }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
 
-      // @@protoc_insertion_point(builder_scope:common.InnerBean)
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:InnerBean)
     }
 
+    // @@protoc_insertion_point(class_scope:InnerBean)
+    private static final org.test.proto.CycleProto.InnerBean DEFAULT_INSTANCE;
     static {
-      defaultInstance = new InnerBean(true);
-      defaultInstance.initFields();
+      DEFAULT_INSTANCE = new org.test.proto.CycleProto.InnerBean();
     }
 
-    // @@protoc_insertion_point(class_scope:common.InnerBean)
+    public static org.test.proto.CycleProto.InnerBean getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<InnerBean>
+        PARSER = new com.google.protobuf.AbstractParser<InnerBean>() {
+      public InnerBean parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new InnerBean(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<InnerBean> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<InnerBean> getParserForType() {
+      return PARSER;
+    }
+
+    public org.test.proto.CycleProto.InnerBean getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   public interface OuterBeanOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:common.OuterBean)
+      // @@protoc_insertion_point(interface_extends:OuterBean)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .common.InnerBean bean1 = 1;</code>
+     * <code>optional .InnerBean bean1 = 1;</code>
      */
     boolean hasBean1();
     /**
-     * <code>optional .common.InnerBean bean1 = 1;</code>
+     * <code>optional .InnerBean bean1 = 1;</code>
      */
     org.test.proto.CycleProto.InnerBean getBean1();
     /**
-     * <code>optional .common.InnerBean bean1 = 1;</code>
+     * <code>optional .InnerBean bean1 = 1;</code>
      */
     org.test.proto.CycleProto.InnerBeanOrBuilder getBean1OrBuilder();
 
     /**
-     * <code>optional .common.InnerBean bean2 = 2;</code>
+     * <code>optional .InnerBean bean2 = 2;</code>
      */
     boolean hasBean2();
     /**
-     * <code>optional .common.InnerBean bean2 = 2;</code>
+     * <code>optional .InnerBean bean2 = 2;</code>
      */
     org.test.proto.CycleProto.InnerBean getBean2();
     /**
-     * <code>optional .common.InnerBean bean2 = 2;</code>
+     * <code>optional .InnerBean bean2 = 2;</code>
      */
     org.test.proto.CycleProto.InnerBeanOrBuilder getBean2OrBuilder();
 
     /**
-     * <code>repeated .common.InnerBean beans = 3;</code>
+     * <code>repeated .InnerBean beans = 3;</code>
      */
     java.util.List<org.test.proto.CycleProto.InnerBean> 
         getBeansList();
     /**
-     * <code>repeated .common.InnerBean beans = 3;</code>
+     * <code>repeated .InnerBean beans = 3;</code>
      */
     org.test.proto.CycleProto.InnerBean getBeans(int index);
     /**
-     * <code>repeated .common.InnerBean beans = 3;</code>
+     * <code>repeated .InnerBean beans = 3;</code>
      */
     int getBeansCount();
     /**
-     * <code>repeated .common.InnerBean beans = 3;</code>
+     * <code>repeated .InnerBean beans = 3;</code>
      */
     java.util.List<? extends org.test.proto.CycleProto.InnerBeanOrBuilder> 
         getBeansOrBuilderList();
     /**
-     * <code>repeated .common.InnerBean beans = 3;</code>
+     * <code>repeated .InnerBean beans = 3;</code>
      */
     org.test.proto.CycleProto.InnerBeanOrBuilder getBeansOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code common.OuterBean}
+   * Protobuf type {@code OuterBean}
    */
-  public static final class OuterBean extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:common.OuterBean)
+  public  static final class OuterBean extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:OuterBean)
       OuterBeanOrBuilder {
     // Use OuterBean.newBuilder() to construct.
-    private OuterBean(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private OuterBean(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private OuterBean(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final OuterBean defaultInstance;
-    public static OuterBean getDefaultInstance() {
-      return defaultInstance;
+    private OuterBean() {
+      beans_ = java.util.Collections.emptyList();
     }
 
-    public OuterBean getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private OuterBean(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
+      this();
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1122,7 +1237,8 @@ public final class CycleProto {
                 beans_ = new java.util.ArrayList<org.test.proto.CycleProto.InnerBean>();
                 mutable_bitField0_ |= 0x00000004;
               }
-              beans_.add(input.readMessage(org.test.proto.CycleProto.InnerBean.PARSER, extensionRegistry));
+              beans_.add(
+                  input.readMessage(org.test.proto.CycleProto.InnerBean.PARSER, extensionRegistry));
               break;
             }
           }
@@ -1131,7 +1247,7 @@ public final class CycleProto {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           beans_ = java.util.Collections.unmodifiableList(beans_);
@@ -1142,114 +1258,94 @@ public final class CycleProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.test.proto.CycleProto.internal_static_common_OuterBean_descriptor;
+      return org.test.proto.CycleProto.internal_static_OuterBean_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.test.proto.CycleProto.internal_static_common_OuterBean_fieldAccessorTable
+      return org.test.proto.CycleProto.internal_static_OuterBean_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               org.test.proto.CycleProto.OuterBean.class, org.test.proto.CycleProto.OuterBean.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<OuterBean> PARSER =
-        new com.google.protobuf.AbstractParser<OuterBean>() {
-      public OuterBean parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OuterBean(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<OuterBean> getParserForType() {
-      return PARSER;
     }
 
     private int bitField0_;
     public static final int BEAN1_FIELD_NUMBER = 1;
     private org.test.proto.CycleProto.InnerBean bean1_;
     /**
-     * <code>optional .common.InnerBean bean1 = 1;</code>
+     * <code>optional .InnerBean bean1 = 1;</code>
      */
     public boolean hasBean1() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>optional .common.InnerBean bean1 = 1;</code>
+     * <code>optional .InnerBean bean1 = 1;</code>
      */
     public org.test.proto.CycleProto.InnerBean getBean1() {
-      return bean1_;
+      return bean1_ == null ? org.test.proto.CycleProto.InnerBean.getDefaultInstance() : bean1_;
     }
     /**
-     * <code>optional .common.InnerBean bean1 = 1;</code>
+     * <code>optional .InnerBean bean1 = 1;</code>
      */
     public org.test.proto.CycleProto.InnerBeanOrBuilder getBean1OrBuilder() {
-      return bean1_;
+      return bean1_ == null ? org.test.proto.CycleProto.InnerBean.getDefaultInstance() : bean1_;
     }
 
     public static final int BEAN2_FIELD_NUMBER = 2;
     private org.test.proto.CycleProto.InnerBean bean2_;
     /**
-     * <code>optional .common.InnerBean bean2 = 2;</code>
+     * <code>optional .InnerBean bean2 = 2;</code>
      */
     public boolean hasBean2() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional .common.InnerBean bean2 = 2;</code>
+     * <code>optional .InnerBean bean2 = 2;</code>
      */
     public org.test.proto.CycleProto.InnerBean getBean2() {
-      return bean2_;
+      return bean2_ == null ? org.test.proto.CycleProto.InnerBean.getDefaultInstance() : bean2_;
     }
     /**
-     * <code>optional .common.InnerBean bean2 = 2;</code>
+     * <code>optional .InnerBean bean2 = 2;</code>
      */
     public org.test.proto.CycleProto.InnerBeanOrBuilder getBean2OrBuilder() {
-      return bean2_;
+      return bean2_ == null ? org.test.proto.CycleProto.InnerBean.getDefaultInstance() : bean2_;
     }
 
     public static final int BEANS_FIELD_NUMBER = 3;
     private java.util.List<org.test.proto.CycleProto.InnerBean> beans_;
     /**
-     * <code>repeated .common.InnerBean beans = 3;</code>
+     * <code>repeated .InnerBean beans = 3;</code>
      */
     public java.util.List<org.test.proto.CycleProto.InnerBean> getBeansList() {
       return beans_;
     }
     /**
-     * <code>repeated .common.InnerBean beans = 3;</code>
+     * <code>repeated .InnerBean beans = 3;</code>
      */
     public java.util.List<? extends org.test.proto.CycleProto.InnerBeanOrBuilder> 
         getBeansOrBuilderList() {
       return beans_;
     }
     /**
-     * <code>repeated .common.InnerBean beans = 3;</code>
+     * <code>repeated .InnerBean beans = 3;</code>
      */
     public int getBeansCount() {
       return beans_.size();
     }
     /**
-     * <code>repeated .common.InnerBean beans = 3;</code>
+     * <code>repeated .InnerBean beans = 3;</code>
      */
     public org.test.proto.CycleProto.InnerBean getBeans(int index) {
       return beans_.get(index);
     }
     /**
-     * <code>repeated .common.InnerBean beans = 3;</code>
+     * <code>repeated .InnerBean beans = 3;</code>
      */
     public org.test.proto.CycleProto.InnerBeanOrBuilder getBeansOrBuilder(
         int index) {
       return beans_.get(index);
     }
 
-    private void initFields() {
-      bean1_ = org.test.proto.CycleProto.InnerBean.getDefaultInstance();
-      bean2_ = org.test.proto.CycleProto.InnerBean.getDefaultInstance();
-      beans_ = java.util.Collections.emptyList();
-    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1262,47 +1358,90 @@ public final class CycleProto {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeMessage(1, bean1_);
+        output.writeMessage(1, getBean1());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeMessage(2, bean2_);
+        output.writeMessage(2, getBean2());
       }
       for (int i = 0; i < beans_.size(); i++) {
         output.writeMessage(3, beans_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, bean1_);
+          .computeMessageSize(1, getBean1());
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, bean2_);
+          .computeMessageSize(2, getBean2());
       }
       for (int i = 0; i < beans_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, beans_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.test.proto.CycleProto.OuterBean)) {
+        return super.equals(obj);
+      }
+      org.test.proto.CycleProto.OuterBean other = (org.test.proto.CycleProto.OuterBean) obj;
+
+      boolean result = true;
+      result = result && (hasBean1() == other.hasBean1());
+      if (hasBean1()) {
+        result = result && getBean1()
+            .equals(other.getBean1());
+      }
+      result = result && (hasBean2() == other.hasBean2());
+      if (hasBean2()) {
+        result = result && getBean2()
+            .equals(other.getBean2());
+      }
+      result = result && getBeansList()
+          .equals(other.getBeansList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      if (hasBean1()) {
+        hash = (37 * hash) + BEAN1_FIELD_NUMBER;
+        hash = (53 * hash) + getBean1().hashCode();
+      }
+      if (hasBean2()) {
+        hash = (37 * hash) + BEAN2_FIELD_NUMBER;
+        hash = (53 * hash) + getBean2().hashCode();
+      }
+      if (getBeansCount() > 0) {
+        hash = (37 * hash) + BEANS_FIELD_NUMBER;
+        hash = (53 * hash) + getBeansList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
     }
 
     public static org.test.proto.CycleProto.OuterBean parseFrom(
@@ -1328,64 +1467,75 @@ public final class CycleProto {
     }
     public static org.test.proto.CycleProto.OuterBean parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static org.test.proto.CycleProto.OuterBean parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.test.proto.CycleProto.OuterBean parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static org.test.proto.CycleProto.OuterBean parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static org.test.proto.CycleProto.OuterBean parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static org.test.proto.CycleProto.OuterBean parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(org.test.proto.CycleProto.OuterBean prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
+    public static Builder newBuilder(org.test.proto.CycleProto.OuterBean prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
     /**
-     * Protobuf type {@code common.OuterBean}
+     * Protobuf type {@code OuterBean}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:common.OuterBean)
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:OuterBean)
         org.test.proto.CycleProto.OuterBeanOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.test.proto.CycleProto.internal_static_common_OuterBean_descriptor;
+        return org.test.proto.CycleProto.internal_static_OuterBean_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.test.proto.CycleProto.internal_static_common_OuterBean_fieldAccessorTable
+        return org.test.proto.CycleProto.internal_static_OuterBean_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 org.test.proto.CycleProto.OuterBean.class, org.test.proto.CycleProto.OuterBean.Builder.class);
       }
@@ -1396,31 +1546,28 @@ public final class CycleProto {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
           getBean1FieldBuilder();
           getBean2FieldBuilder();
           getBeansFieldBuilder();
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-
       public Builder clear() {
         super.clear();
         if (bean1Builder_ == null) {
-          bean1_ = org.test.proto.CycleProto.InnerBean.getDefaultInstance();
+          bean1_ = null;
         } else {
           bean1Builder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
         if (bean2Builder_ == null) {
-          bean2_ = org.test.proto.CycleProto.InnerBean.getDefaultInstance();
+          bean2_ = null;
         } else {
           bean2Builder_.clear();
         }
@@ -1434,13 +1581,9 @@ public final class CycleProto {
         return this;
       }
 
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.test.proto.CycleProto.internal_static_common_OuterBean_descriptor;
+        return org.test.proto.CycleProto.internal_static_OuterBean_descriptor;
       }
 
       public org.test.proto.CycleProto.OuterBean getDefaultInstanceForType() {
@@ -1489,6 +1632,32 @@ public final class CycleProto {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof org.test.proto.CycleProto.OuterBean) {
           return mergeFrom((org.test.proto.CycleProto.OuterBean)other);
@@ -1525,14 +1694,15 @@ public final class CycleProto {
               beans_ = other.beans_;
               bitField0_ = (bitField0_ & ~0x00000004);
               beansBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBeansFieldBuilder() : null;
             } else {
               beansBuilder_.addAllMessages(other.beans_);
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
 
@@ -1549,7 +1719,7 @@ public final class CycleProto {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (org.test.proto.CycleProto.OuterBean) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -1559,27 +1729,27 @@ public final class CycleProto {
       }
       private int bitField0_;
 
-      private org.test.proto.CycleProto.InnerBean bean1_ = org.test.proto.CycleProto.InnerBean.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
+      private org.test.proto.CycleProto.InnerBean bean1_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
           org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder> bean1Builder_;
       /**
-       * <code>optional .common.InnerBean bean1 = 1;</code>
+       * <code>optional .InnerBean bean1 = 1;</code>
        */
       public boolean hasBean1() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>optional .common.InnerBean bean1 = 1;</code>
+       * <code>optional .InnerBean bean1 = 1;</code>
        */
       public org.test.proto.CycleProto.InnerBean getBean1() {
         if (bean1Builder_ == null) {
-          return bean1_;
+          return bean1_ == null ? org.test.proto.CycleProto.InnerBean.getDefaultInstance() : bean1_;
         } else {
           return bean1Builder_.getMessage();
         }
       }
       /**
-       * <code>optional .common.InnerBean bean1 = 1;</code>
+       * <code>optional .InnerBean bean1 = 1;</code>
        */
       public Builder setBean1(org.test.proto.CycleProto.InnerBean value) {
         if (bean1Builder_ == null) {
@@ -1595,7 +1765,7 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>optional .common.InnerBean bean1 = 1;</code>
+       * <code>optional .InnerBean bean1 = 1;</code>
        */
       public Builder setBean1(
           org.test.proto.CycleProto.InnerBean.Builder builderForValue) {
@@ -1609,11 +1779,12 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>optional .common.InnerBean bean1 = 1;</code>
+       * <code>optional .InnerBean bean1 = 1;</code>
        */
       public Builder mergeBean1(org.test.proto.CycleProto.InnerBean value) {
         if (bean1Builder_ == null) {
           if (((bitField0_ & 0x00000001) == 0x00000001) &&
+              bean1_ != null &&
               bean1_ != org.test.proto.CycleProto.InnerBean.getDefaultInstance()) {
             bean1_ =
               org.test.proto.CycleProto.InnerBean.newBuilder(bean1_).mergeFrom(value).buildPartial();
@@ -1628,11 +1799,11 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>optional .common.InnerBean bean1 = 1;</code>
+       * <code>optional .InnerBean bean1 = 1;</code>
        */
       public Builder clearBean1() {
         if (bean1Builder_ == null) {
-          bean1_ = org.test.proto.CycleProto.InnerBean.getDefaultInstance();
+          bean1_ = null;
           onChanged();
         } else {
           bean1Builder_.clear();
@@ -1641,7 +1812,7 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>optional .common.InnerBean bean1 = 1;</code>
+       * <code>optional .InnerBean bean1 = 1;</code>
        */
       public org.test.proto.CycleProto.InnerBean.Builder getBean1Builder() {
         bitField0_ |= 0x00000001;
@@ -1649,23 +1820,24 @@ public final class CycleProto {
         return getBean1FieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .common.InnerBean bean1 = 1;</code>
+       * <code>optional .InnerBean bean1 = 1;</code>
        */
       public org.test.proto.CycleProto.InnerBeanOrBuilder getBean1OrBuilder() {
         if (bean1Builder_ != null) {
           return bean1Builder_.getMessageOrBuilder();
         } else {
-          return bean1_;
+          return bean1_ == null ?
+              org.test.proto.CycleProto.InnerBean.getDefaultInstance() : bean1_;
         }
       }
       /**
-       * <code>optional .common.InnerBean bean1 = 1;</code>
+       * <code>optional .InnerBean bean1 = 1;</code>
        */
-      private com.google.protobuf.SingleFieldBuilder<
+      private com.google.protobuf.SingleFieldBuilderV3<
           org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder> 
           getBean1FieldBuilder() {
         if (bean1Builder_ == null) {
-          bean1Builder_ = new com.google.protobuf.SingleFieldBuilder<
+          bean1Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
               org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder>(
                   getBean1(),
                   getParentForChildren(),
@@ -1675,27 +1847,27 @@ public final class CycleProto {
         return bean1Builder_;
       }
 
-      private org.test.proto.CycleProto.InnerBean bean2_ = org.test.proto.CycleProto.InnerBean.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
+      private org.test.proto.CycleProto.InnerBean bean2_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
           org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder> bean2Builder_;
       /**
-       * <code>optional .common.InnerBean bean2 = 2;</code>
+       * <code>optional .InnerBean bean2 = 2;</code>
        */
       public boolean hasBean2() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional .common.InnerBean bean2 = 2;</code>
+       * <code>optional .InnerBean bean2 = 2;</code>
        */
       public org.test.proto.CycleProto.InnerBean getBean2() {
         if (bean2Builder_ == null) {
-          return bean2_;
+          return bean2_ == null ? org.test.proto.CycleProto.InnerBean.getDefaultInstance() : bean2_;
         } else {
           return bean2Builder_.getMessage();
         }
       }
       /**
-       * <code>optional .common.InnerBean bean2 = 2;</code>
+       * <code>optional .InnerBean bean2 = 2;</code>
        */
       public Builder setBean2(org.test.proto.CycleProto.InnerBean value) {
         if (bean2Builder_ == null) {
@@ -1711,7 +1883,7 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>optional .common.InnerBean bean2 = 2;</code>
+       * <code>optional .InnerBean bean2 = 2;</code>
        */
       public Builder setBean2(
           org.test.proto.CycleProto.InnerBean.Builder builderForValue) {
@@ -1725,11 +1897,12 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>optional .common.InnerBean bean2 = 2;</code>
+       * <code>optional .InnerBean bean2 = 2;</code>
        */
       public Builder mergeBean2(org.test.proto.CycleProto.InnerBean value) {
         if (bean2Builder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              bean2_ != null &&
               bean2_ != org.test.proto.CycleProto.InnerBean.getDefaultInstance()) {
             bean2_ =
               org.test.proto.CycleProto.InnerBean.newBuilder(bean2_).mergeFrom(value).buildPartial();
@@ -1744,11 +1917,11 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>optional .common.InnerBean bean2 = 2;</code>
+       * <code>optional .InnerBean bean2 = 2;</code>
        */
       public Builder clearBean2() {
         if (bean2Builder_ == null) {
-          bean2_ = org.test.proto.CycleProto.InnerBean.getDefaultInstance();
+          bean2_ = null;
           onChanged();
         } else {
           bean2Builder_.clear();
@@ -1757,7 +1930,7 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>optional .common.InnerBean bean2 = 2;</code>
+       * <code>optional .InnerBean bean2 = 2;</code>
        */
       public org.test.proto.CycleProto.InnerBean.Builder getBean2Builder() {
         bitField0_ |= 0x00000002;
@@ -1765,23 +1938,24 @@ public final class CycleProto {
         return getBean2FieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .common.InnerBean bean2 = 2;</code>
+       * <code>optional .InnerBean bean2 = 2;</code>
        */
       public org.test.proto.CycleProto.InnerBeanOrBuilder getBean2OrBuilder() {
         if (bean2Builder_ != null) {
           return bean2Builder_.getMessageOrBuilder();
         } else {
-          return bean2_;
+          return bean2_ == null ?
+              org.test.proto.CycleProto.InnerBean.getDefaultInstance() : bean2_;
         }
       }
       /**
-       * <code>optional .common.InnerBean bean2 = 2;</code>
+       * <code>optional .InnerBean bean2 = 2;</code>
        */
-      private com.google.protobuf.SingleFieldBuilder<
+      private com.google.protobuf.SingleFieldBuilderV3<
           org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder> 
           getBean2FieldBuilder() {
         if (bean2Builder_ == null) {
-          bean2Builder_ = new com.google.protobuf.SingleFieldBuilder<
+          bean2Builder_ = new com.google.protobuf.SingleFieldBuilderV3<
               org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder>(
                   getBean2(),
                   getParentForChildren(),
@@ -1800,11 +1974,11 @@ public final class CycleProto {
          }
       }
 
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder> beansBuilder_;
 
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public java.util.List<org.test.proto.CycleProto.InnerBean> getBeansList() {
         if (beansBuilder_ == null) {
@@ -1814,7 +1988,7 @@ public final class CycleProto {
         }
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public int getBeansCount() {
         if (beansBuilder_ == null) {
@@ -1824,7 +1998,7 @@ public final class CycleProto {
         }
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public org.test.proto.CycleProto.InnerBean getBeans(int index) {
         if (beansBuilder_ == null) {
@@ -1834,7 +2008,7 @@ public final class CycleProto {
         }
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public Builder setBeans(
           int index, org.test.proto.CycleProto.InnerBean value) {
@@ -1851,7 +2025,7 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public Builder setBeans(
           int index, org.test.proto.CycleProto.InnerBean.Builder builderForValue) {
@@ -1865,7 +2039,7 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public Builder addBeans(org.test.proto.CycleProto.InnerBean value) {
         if (beansBuilder_ == null) {
@@ -1881,7 +2055,7 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public Builder addBeans(
           int index, org.test.proto.CycleProto.InnerBean value) {
@@ -1898,7 +2072,7 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public Builder addBeans(
           org.test.proto.CycleProto.InnerBean.Builder builderForValue) {
@@ -1912,7 +2086,7 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public Builder addBeans(
           int index, org.test.proto.CycleProto.InnerBean.Builder builderForValue) {
@@ -1926,7 +2100,7 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public Builder addAllBeans(
           java.lang.Iterable<? extends org.test.proto.CycleProto.InnerBean> values) {
@@ -1941,7 +2115,7 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public Builder clearBeans() {
         if (beansBuilder_ == null) {
@@ -1954,7 +2128,7 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public Builder removeBeans(int index) {
         if (beansBuilder_ == null) {
@@ -1967,14 +2141,14 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public org.test.proto.CycleProto.InnerBean.Builder getBeansBuilder(
           int index) {
         return getBeansFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public org.test.proto.CycleProto.InnerBeanOrBuilder getBeansOrBuilder(
           int index) {
@@ -1984,7 +2158,7 @@ public final class CycleProto {
         }
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public java.util.List<? extends org.test.proto.CycleProto.InnerBeanOrBuilder> 
            getBeansOrBuilderList() {
@@ -1995,14 +2169,14 @@ public final class CycleProto {
         }
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public org.test.proto.CycleProto.InnerBean.Builder addBeansBuilder() {
         return getBeansFieldBuilder().addBuilder(
             org.test.proto.CycleProto.InnerBean.getDefaultInstance());
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public org.test.proto.CycleProto.InnerBean.Builder addBeansBuilder(
           int index) {
@@ -2010,17 +2184,17 @@ public final class CycleProto {
             index, org.test.proto.CycleProto.InnerBean.getDefaultInstance());
       }
       /**
-       * <code>repeated .common.InnerBean beans = 3;</code>
+       * <code>repeated .InnerBean beans = 3;</code>
        */
       public java.util.List<org.test.proto.CycleProto.InnerBean.Builder> 
            getBeansBuilderList() {
         return getBeansFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder> 
           getBeansFieldBuilder() {
         if (beansBuilder_ == null) {
-          beansBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+          beansBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder>(
                   beans_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
@@ -2030,45 +2204,81 @@ public final class CycleProto {
         }
         return beansBuilder_;
       }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
 
-      // @@protoc_insertion_point(builder_scope:common.OuterBean)
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:OuterBean)
     }
 
+    // @@protoc_insertion_point(class_scope:OuterBean)
+    private static final org.test.proto.CycleProto.OuterBean DEFAULT_INSTANCE;
     static {
-      defaultInstance = new OuterBean(true);
-      defaultInstance.initFields();
+      DEFAULT_INSTANCE = new org.test.proto.CycleProto.OuterBean();
     }
 
-    // @@protoc_insertion_point(class_scope:common.OuterBean)
+    public static org.test.proto.CycleProto.OuterBean getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<OuterBean>
+        PARSER = new com.google.protobuf.AbstractParser<OuterBean>() {
+      public OuterBean parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new OuterBean(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<OuterBean> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OuterBean> getParserForType() {
+      return PARSER;
+    }
+
+    public org.test.proto.CycleProto.OuterBean getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_common_InnerBean_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_common_InnerBean_fieldAccessorTable;
+    internal_static_InnerBean_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_InnerBean_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_common_OuterBean_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_common_OuterBean_fieldAccessorTable;
+    internal_static_OuterBean_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_OuterBean_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013Cycle.proto\022\006common\"\201\001\n\tInnerBean\022\016\n\006v" +
-      "alue1\030\001 \001(\003\022\016\n\006value2\030\002 \001(\003\022\016\n\006value3\030\003 " +
-      "\001(\003\022\016\n\006value4\030\004 \001(\003\022\016\n\006value5\030\005 \001(\t\022$\n\tr" +
-      "eference\030\006 \001(\0132\021.common.InnerBean\"q\n\tOut" +
-      "erBean\022 \n\005bean1\030\001 \001(\0132\021.common.InnerBean" +
-      "\022 \n\005bean2\030\002 \001(\0132\021.common.InnerBean\022 \n\005be" +
-      "ans\030\003 \003(\0132\021.common.InnerBeanB\034\n\016org.test" +
-      ".protoB\nCycleProto"
+      "\n\013Cycle.proto\"z\n\tInnerBean\022\016\n\006value1\030\001 \001" +
+      "(\003\022\016\n\006value2\030\002 \001(\003\022\016\n\006value3\030\003 \001(\003\022\016\n\006va" +
+      "lue4\030\004 \001(\003\022\016\n\006value5\030\005 \001(\t\022\035\n\treference\030" +
+      "\006 \001(\0132\n.InnerBean\"\\\n\tOuterBean\022\031\n\005bean1\030" +
+      "\001 \001(\0132\n.InnerBean\022\031\n\005bean2\030\002 \001(\0132\n.Inner" +
+      "Bean\022\031\n\005beans\030\003 \003(\0132\n.InnerBeanB\034\n\016org.t" +
+      "est.protoB\nCycleProto"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2082,17 +2292,17 @@ public final class CycleProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_common_InnerBean_descriptor =
+    internal_static_InnerBean_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_common_InnerBean_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_common_InnerBean_descriptor,
+    internal_static_InnerBean_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_InnerBean_descriptor,
         new java.lang.String[] { "Value1", "Value2", "Value3", "Value4", "Value5", "Reference", });
-    internal_static_common_OuterBean_descriptor =
+    internal_static_OuterBean_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_common_OuterBean_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_common_OuterBean_descriptor,
+    internal_static_OuterBean_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_OuterBean_descriptor,
         new java.lang.String[] { "Bean1", "Bean2", "Beans", });
   }
 
