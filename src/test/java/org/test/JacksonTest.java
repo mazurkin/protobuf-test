@@ -1,7 +1,7 @@
 package org.test;
 
 import org.junit.Test;
-import org.test.beans.MonsterEntity;
+import org.test.beans.MonsterPojo;
 import org.test.util.NullOutputStream;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -32,7 +32,7 @@ public class JacksonTest {
         long marker = System.nanoTime();
 
         for (int i = 0; i < TRIALS; i++) {
-            MonsterEntity entity = new MonsterEntity();
+            MonsterPojo entity = new MonsterPojo();
             entity.value001 = "aaaa";
             entity.value002 = 1000;
 

@@ -2,7 +2,7 @@ package org.test.beans;
 
 import java.io.Serializable;
 
-public class MonsterEntity implements Serializable {
+public class MonsterPojo implements Serializable {
 
     public String value001;
 

@@ -1,9 +1,11 @@
 package org.test;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.test.proto.nano.MonsterProto;
 
 import com.google.protobuf.nano.MessageNano;
+
 
 public class MonsterNanoTest {
 
@@ -18,7 +20,8 @@ public class MonsterNanoTest {
         bean.value002 = 1000;
 
         for (int i = 0; i < TRIALS; i++) {
-            MessageNano.toByteArray(bean);
+            byte[] data = MessageNano.toByteArray(bean);
+            Assert.assertEquals(9, data.length);
         }
 
         System.out.printf("Writing: %.6f ns/op\n", 1.0 * (System.nanoTime() - marker) / TRIALS);

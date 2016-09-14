@@ -1,11 +1,11 @@
 package org.test;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.test.proto.CycleProto;
-
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
 
 public class CycleTest {
 
@@ -24,12 +24,12 @@ public class CycleTest {
                 .addBeans(innerBean) // the same bean
                 .build();
 
-        ByteOutputStream os = new ByteOutputStream();
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
         outerBean.writeTo(os);
 
         System.out.printf("size = %d\n", os.size());
 
-        ByteInputStream is = new ByteInputStream(os.getBytes(), os.size());
+        ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
         CycleProto.OuterBean outerBean2 = CycleProto.OuterBean.parseFrom(is);
 
         // 1. references are lost (may be important for a complex structure)
@@ -41,7 +41,6 @@ public class CycleTest {
     public void testLoop() throws Exception {
         CycleProto.InnerBean.Builder innerBean1 = CycleProto.InnerBean.newBuilder()
                 .setValue1(100);
-
         CycleProto.InnerBean.Builder innerBean2 = CycleProto.InnerBean.newBuilder()
                 .setValue1(200);
 
@@ -53,10 +52,10 @@ public class CycleTest {
                 .setBean2(innerBean2)
                 .build();
 
-        ByteOutputStream os = new ByteOutputStream();
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
         outerBean.writeTo(os);
 
-        ByteInputStream is = new ByteInputStream(os.getBytes(), os.size());
+        ByteArrayInputStream is = new ByteArrayInputStream(os.toByteArray());
         CycleProto.OuterBean outerBean2 = CycleProto.OuterBean.parseFrom(is);
 
         // Check for cyclic links
