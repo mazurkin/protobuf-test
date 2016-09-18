@@ -28,16 +28,19 @@ public interface CycleProto {
     // optional int64 value2 = 2;
     public long value2;
 
-    // optional int64 value3 = 3;
+    // optional int64 value3 = 3 [default = 1000];
     public long value3;
 
-    // optional int64 value4 = 4;
+    // optional int64 value4 = 4 [default = 1200];
     public long value4;
 
     // optional string value5 = 5;
     public java.lang.String value5;
 
-    // optional .InnerBean reference = 6;
+    // optional bytes value6 = 6;
+    public byte[] value6;
+
+    // optional .InnerBean reference = 7;
     public org.test.proto.nano.CycleProto.InnerBean reference;
 
     public InnerBean() {
@@ -47,9 +50,10 @@ public interface CycleProto {
     public InnerBean clear() {
       value1 = 0L;
       value2 = 0L;
-      value3 = 0L;
-      value4 = 0L;
+      value3 = 1000L;
+      value4 = 1200L;
       value5 = "";
+      value6 = com.google.protobuf.nano.WireFormatNano.EMPTY_BYTES;
       reference = null;
       cachedSize = -1;
       return this;
@@ -64,17 +68,20 @@ public interface CycleProto {
       if (this.value2 != 0L) {
         output.writeInt64(2, this.value2);
       }
-      if (this.value3 != 0L) {
+      if (this.value3 != 1000L) {
         output.writeInt64(3, this.value3);
       }
-      if (this.value4 != 0L) {
+      if (this.value4 != 1200L) {
         output.writeInt64(4, this.value4);
       }
       if (!this.value5.equals("")) {
         output.writeString(5, this.value5);
       }
+      if (!java.util.Arrays.equals(this.value6, com.google.protobuf.nano.WireFormatNano.EMPTY_BYTES)) {
+        output.writeBytes(6, this.value6);
+      }
       if (this.reference != null) {
-        output.writeMessage(6, this.reference);
+        output.writeMessage(7, this.reference);
       }
       super.writeTo(output);
     }
@@ -90,11 +97,11 @@ public interface CycleProto {
         size += com.google.protobuf.nano.CodedOutputByteBufferNano
             .computeInt64Size(2, this.value2);
       }
-      if (this.value3 != 0L) {
+      if (this.value3 != 1000L) {
         size += com.google.protobuf.nano.CodedOutputByteBufferNano
             .computeInt64Size(3, this.value3);
       }
-      if (this.value4 != 0L) {
+      if (this.value4 != 1200L) {
         size += com.google.protobuf.nano.CodedOutputByteBufferNano
             .computeInt64Size(4, this.value4);
       }
@@ -102,9 +109,13 @@ public interface CycleProto {
         size += com.google.protobuf.nano.CodedOutputByteBufferNano
             .computeStringSize(5, this.value5);
       }
+      if (!java.util.Arrays.equals(this.value6, com.google.protobuf.nano.WireFormatNano.EMPTY_BYTES)) {
+        size += com.google.protobuf.nano.CodedOutputByteBufferNano
+            .computeBytesSize(6, this.value6);
+      }
       if (this.reference != null) {
         size += com.google.protobuf.nano.CodedOutputByteBufferNano
-          .computeMessageSize(6, this.reference);
+          .computeMessageSize(7, this.reference);
       }
       return size;
     }
@@ -145,6 +156,10 @@ public interface CycleProto {
             break;
           }
           case 50: {
+            this.value6 = input.readBytes();
+            break;
+          }
+          case 58: {
             if (this.reference == null) {
               this.reference = new org.test.proto.nano.CycleProto.InnerBean();
             }

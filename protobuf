@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROTOC="/opt/protobuf/protobuf-3.0.2/protoc"
+PROTOC="/opt/protobuf/protobuf-3.0.2-fixed/protoc"
 
 for SOURCE in src/main/config/proto/*.proto
 do

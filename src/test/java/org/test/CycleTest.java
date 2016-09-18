@@ -14,8 +14,8 @@ public class CycleTest {
         CycleProto.InnerBean.Builder innerBean = CycleProto.InnerBean.newBuilder()
                 .setValue1(1L)
                 .setValue2(Long.MAX_VALUE)
-                .setValue3(300000000000000L)
-                .setValue5("0123456789abcdef");
+                .setValue3(300000000000000L);
+//                .setValue5("0123456789abcdef");
 
         CycleProto.OuterBean outerBean = CycleProto.OuterBean.newBuilder()
                 .setBean1(innerBean) // the same bean
@@ -61,5 +61,15 @@ public class CycleTest {
         // Check for cyclic links
         Assert.assertSame(outerBean2.getBean1(), outerBean2.getBean2().getReference());
         Assert.assertSame(outerBean2.getBean2(), outerBean2.getBean1().getReference());
+    }
+
+    @Test
+    public void testNulls() throws Exception {
+        CycleProto.OuterBean outerBean = CycleProto.OuterBean.newBuilder()
+                .build();
+
+        Assert.assertNull(outerBean.getBean1());
+        Assert.assertNull(outerBean.getBean2());
+        Assert.assertNull(outerBean.getBeansList());
     }
 }

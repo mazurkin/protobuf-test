@@ -37,20 +37,20 @@ public final class CycleProto {
     long getValue2();
 
     /**
-     * <code>optional int64 value3 = 3;</code>
+     * <code>optional int64 value3 = 3 [default = 1000];</code>
      */
     boolean hasValue3();
     /**
-     * <code>optional int64 value3 = 3;</code>
+     * <code>optional int64 value3 = 3 [default = 1000];</code>
      */
     long getValue3();
 
     /**
-     * <code>optional int64 value4 = 4;</code>
+     * <code>optional int64 value4 = 4 [default = 1200];</code>
      */
     boolean hasValue4();
     /**
-     * <code>optional int64 value4 = 4;</code>
+     * <code>optional int64 value4 = 4 [default = 1200];</code>
      */
     long getValue4();
 
@@ -69,15 +69,24 @@ public final class CycleProto {
         getValue5Bytes();
 
     /**
-     * <code>optional .InnerBean reference = 6;</code>
+     * <code>optional bytes value6 = 6;</code>
+     */
+    boolean hasValue6();
+    /**
+     * <code>optional bytes value6 = 6;</code>
+     */
+    com.google.protobuf.ByteString getValue6();
+
+    /**
+     * <code>optional .InnerBean reference = 7;</code>
      */
     boolean hasReference();
     /**
-     * <code>optional .InnerBean reference = 6;</code>
+     * <code>optional .InnerBean reference = 7;</code>
      */
     org.test.proto.CycleProto.InnerBean getReference();
     /**
-     * <code>optional .InnerBean reference = 6;</code>
+     * <code>optional .InnerBean reference = 7;</code>
      */
     org.test.proto.CycleProto.InnerBeanOrBuilder getReferenceOrBuilder();
   }
@@ -93,11 +102,10 @@ public final class CycleProto {
       super(builder);
     }
     private InnerBean() {
-      value1_ = 0L;
-      value2_ = 0L;
-      value3_ = 0L;
-      value4_ = 0L;
+      value3_ = 1000L;
+      value4_ = 1200L;
       value5_ = "";
+      value6_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -155,8 +163,13 @@ public final class CycleProto {
               break;
             }
             case 50: {
+              bitField0_ |= 0x00000020;
+              value6_ = input.readBytes();
+              break;
+            }
+            case 58: {
               org.test.proto.CycleProto.InnerBean.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000020) == 0x00000020)) {
+              if (((bitField0_ & 0x00000040) == 0x00000040)) {
                 subBuilder = reference_.toBuilder();
               }
               reference_ = input.readMessage(org.test.proto.CycleProto.InnerBean.PARSER, extensionRegistry);
@@ -164,7 +177,7 @@ public final class CycleProto {
                 subBuilder.mergeFrom(reference_);
                 reference_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000020;
+              bitField0_ |= 0x00000040;
               break;
             }
           }
@@ -225,13 +238,13 @@ public final class CycleProto {
     public static final int VALUE3_FIELD_NUMBER = 3;
     private long value3_;
     /**
-     * <code>optional int64 value3 = 3;</code>
+     * <code>optional int64 value3 = 3 [default = 1000];</code>
      */
     public boolean hasValue3() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional int64 value3 = 3;</code>
+     * <code>optional int64 value3 = 3 [default = 1000];</code>
      */
     public long getValue3() {
       return value3_;
@@ -240,13 +253,13 @@ public final class CycleProto {
     public static final int VALUE4_FIELD_NUMBER = 4;
     private long value4_;
     /**
-     * <code>optional int64 value4 = 4;</code>
+     * <code>optional int64 value4 = 4 [default = 1200];</code>
      */
     public boolean hasValue4() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional int64 value4 = 4;</code>
+     * <code>optional int64 value4 = 4 [default = 1200];</code>
      */
     public long getValue4() {
       return value4_;
@@ -294,22 +307,37 @@ public final class CycleProto {
       }
     }
 
-    public static final int REFERENCE_FIELD_NUMBER = 6;
-    private org.test.proto.CycleProto.InnerBean reference_;
+    public static final int VALUE6_FIELD_NUMBER = 6;
+    private com.google.protobuf.ByteString value6_;
     /**
-     * <code>optional .InnerBean reference = 6;</code>
+     * <code>optional bytes value6 = 6;</code>
      */
-    public boolean hasReference() {
+    public boolean hasValue6() {
       return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
-     * <code>optional .InnerBean reference = 6;</code>
+     * <code>optional bytes value6 = 6;</code>
+     */
+    public com.google.protobuf.ByteString getValue6() {
+      return value6_;
+    }
+
+    public static final int REFERENCE_FIELD_NUMBER = 7;
+    private org.test.proto.CycleProto.InnerBean reference_;
+    /**
+     * <code>optional .InnerBean reference = 7;</code>
+     */
+    public boolean hasReference() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    /**
+     * <code>optional .InnerBean reference = 7;</code>
      */
     public org.test.proto.CycleProto.InnerBean getReference() {
       return reference_ == null ? org.test.proto.CycleProto.InnerBean.getDefaultInstance() : reference_;
     }
     /**
-     * <code>optional .InnerBean reference = 6;</code>
+     * <code>optional .InnerBean reference = 7;</code>
      */
     public org.test.proto.CycleProto.InnerBeanOrBuilder getReferenceOrBuilder() {
       return reference_ == null ? org.test.proto.CycleProto.InnerBean.getDefaultInstance() : reference_;
@@ -343,7 +371,10 @@ public final class CycleProto {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, value5_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeMessage(6, getReference());
+        output.writeBytes(6, value6_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeMessage(7, getReference());
       }
       unknownFields.writeTo(output);
     }
@@ -374,7 +405,11 @@ public final class CycleProto {
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getReference());
+          .computeBytesSize(6, value6_);
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getReference());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -418,6 +453,11 @@ public final class CycleProto {
         result = result && getValue5()
             .equals(other.getValue5());
       }
+      result = result && (hasValue6() == other.hasValue6());
+      if (hasValue6()) {
+        result = result && getValue6()
+            .equals(other.getValue6());
+      }
       result = result && (hasReference() == other.hasReference());
       if (hasReference()) {
         result = result && getReference()
@@ -457,6 +497,10 @@ public final class CycleProto {
       if (hasValue5()) {
         hash = (37 * hash) + VALUE5_FIELD_NUMBER;
         hash = (53 * hash) + getValue5().hashCode();
+      }
+      if (hasValue6()) {
+        hash = (37 * hash) + VALUE6_FIELD_NUMBER;
+        hash = (53 * hash) + getValue6().hashCode();
       }
       if (hasReference()) {
         hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
@@ -585,18 +629,20 @@ public final class CycleProto {
         bitField0_ = (bitField0_ & ~0x00000001);
         value2_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000002);
-        value3_ = 0L;
+        value3_ = 1000L;
         bitField0_ = (bitField0_ & ~0x00000004);
-        value4_ = 0L;
+        value4_ = 1200L;
         bitField0_ = (bitField0_ & ~0x00000008);
         value5_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
+        value6_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000020);
         if (referenceBuilder_ == null) {
           reference_ = null;
         } else {
           referenceBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -622,32 +668,44 @@ public final class CycleProto {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          result.value1_ = value1_;
           to_bitField0_ |= 0x00000001;
         }
-        result.value1_ = value1_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          result.value2_ = value2_;
           to_bitField0_ |= 0x00000002;
         }
-        result.value2_ = value2_;
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          result.value3_ = value3_;
           to_bitField0_ |= 0x00000004;
-        }
-        result.value3_ = value3_;
-        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-          to_bitField0_ |= 0x00000008;
-        }
-        result.value4_ = value4_;
-        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-          to_bitField0_ |= 0x00000010;
-        }
-        result.value5_ = value5_;
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        if (referenceBuilder_ == null) {
-          result.reference_ = reference_;
         } else {
-          result.reference_ = referenceBuilder_.build();
+          result.value3_ = 1000L;
+        }
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          result.value4_ = value4_;
+          to_bitField0_ |= 0x00000008;
+        } else {
+          result.value4_ = 1200L;
+        }
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          result.value5_ = value5_;
+          to_bitField0_ |= 0x00000010;
+        } else {
+          result.value5_ = "";
+        }
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          result.value6_ = value6_;
+          to_bitField0_ |= 0x00000020;
+        } else {
+          result.value6_ = com.google.protobuf.ByteString.EMPTY;
+        }
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          if (referenceBuilder_ == null) {
+            result.reference_ = reference_;
+          } else {
+            result.reference_ = referenceBuilder_.build();
+          }
+          to_bitField0_ |= 0x00000040;
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -707,6 +765,9 @@ public final class CycleProto {
           bitField0_ |= 0x00000010;
           value5_ = other.value5_;
           onChanged();
+        }
+        if (other.hasValue6()) {
+          setValue6(other.getValue6());
         }
         if (other.hasReference()) {
           mergeReference(other.getReference());
@@ -803,21 +864,21 @@ public final class CycleProto {
         return this;
       }
 
-      private long value3_ ;
+      private long value3_ = 1000L;
       /**
-       * <code>optional int64 value3 = 3;</code>
+       * <code>optional int64 value3 = 3 [default = 1000];</code>
        */
       public boolean hasValue3() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional int64 value3 = 3;</code>
+       * <code>optional int64 value3 = 3 [default = 1000];</code>
        */
       public long getValue3() {
         return value3_;
       }
       /**
-       * <code>optional int64 value3 = 3;</code>
+       * <code>optional int64 value3 = 3 [default = 1000];</code>
        */
       public Builder setValue3(long value) {
         bitField0_ |= 0x00000004;
@@ -826,30 +887,30 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>optional int64 value3 = 3;</code>
+       * <code>optional int64 value3 = 3 [default = 1000];</code>
        */
       public Builder clearValue3() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        value3_ = 0L;
+        value3_ = 1000L;
         onChanged();
         return this;
       }
 
-      private long value4_ ;
+      private long value4_ = 1200L;
       /**
-       * <code>optional int64 value4 = 4;</code>
+       * <code>optional int64 value4 = 4 [default = 1200];</code>
        */
       public boolean hasValue4() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional int64 value4 = 4;</code>
+       * <code>optional int64 value4 = 4 [default = 1200];</code>
        */
       public long getValue4() {
         return value4_;
       }
       /**
-       * <code>optional int64 value4 = 4;</code>
+       * <code>optional int64 value4 = 4 [default = 1200];</code>
        */
       public Builder setValue4(long value) {
         bitField0_ |= 0x00000008;
@@ -858,11 +919,11 @@ public final class CycleProto {
         return this;
       }
       /**
-       * <code>optional int64 value4 = 4;</code>
+       * <code>optional int64 value4 = 4 [default = 1200];</code>
        */
       public Builder clearValue4() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        value4_ = 0L;
+        value4_ = 1200L;
         onChanged();
         return this;
       }
@@ -943,17 +1004,52 @@ public final class CycleProto {
         return this;
       }
 
-      private org.test.proto.CycleProto.InnerBean reference_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder> referenceBuilder_;
+      private com.google.protobuf.ByteString value6_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional .InnerBean reference = 6;</code>
+       * <code>optional bytes value6 = 6;</code>
        */
-      public boolean hasReference() {
+      public boolean hasValue6() {
         return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
-       * <code>optional .InnerBean reference = 6;</code>
+       * <code>optional bytes value6 = 6;</code>
+       */
+      public com.google.protobuf.ByteString getValue6() {
+        return value6_;
+      }
+      /**
+       * <code>optional bytes value6 = 6;</code>
+       */
+      public Builder setValue6(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        value6_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes value6 = 6;</code>
+       */
+      public Builder clearValue6() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        value6_ = getDefaultInstance().getValue6();
+        onChanged();
+        return this;
+      }
+
+      private org.test.proto.CycleProto.InnerBean reference_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder> referenceBuilder_;
+      /**
+       * <code>optional .InnerBean reference = 7;</code>
+       */
+      public boolean hasReference() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      /**
+       * <code>optional .InnerBean reference = 7;</code>
        */
       public org.test.proto.CycleProto.InnerBean getReference() {
         if (referenceBuilder_ == null) {
@@ -963,7 +1059,7 @@ public final class CycleProto {
         }
       }
       /**
-       * <code>optional .InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 7;</code>
        */
       public Builder setReference(org.test.proto.CycleProto.InnerBean value) {
         if (referenceBuilder_ == null) {
@@ -975,11 +1071,11 @@ public final class CycleProto {
         } else {
           referenceBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         return this;
       }
       /**
-       * <code>optional .InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 7;</code>
        */
       public Builder setReference(
           org.test.proto.CycleProto.InnerBean.Builder builderForValue) {
@@ -989,15 +1085,15 @@ public final class CycleProto {
         } else {
           referenceBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         return this;
       }
       /**
-       * <code>optional .InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 7;</code>
        */
       public Builder mergeReference(org.test.proto.CycleProto.InnerBean value) {
         if (referenceBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020) &&
+          if (((bitField0_ & 0x00000040) == 0x00000040) &&
               reference_ != null &&
               reference_ != org.test.proto.CycleProto.InnerBean.getDefaultInstance()) {
             reference_ =
@@ -1009,11 +1105,11 @@ public final class CycleProto {
         } else {
           referenceBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         return this;
       }
       /**
-       * <code>optional .InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 7;</code>
        */
       public Builder clearReference() {
         if (referenceBuilder_ == null) {
@@ -1022,19 +1118,19 @@ public final class CycleProto {
         } else {
           referenceBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
       /**
-       * <code>optional .InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 7;</code>
        */
       public org.test.proto.CycleProto.InnerBean.Builder getReferenceBuilder() {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return getReferenceFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 7;</code>
        */
       public org.test.proto.CycleProto.InnerBeanOrBuilder getReferenceOrBuilder() {
         if (referenceBuilder_ != null) {
@@ -1045,7 +1141,7 @@ public final class CycleProto {
         }
       }
       /**
-       * <code>optional .InnerBean reference = 6;</code>
+       * <code>optional .InnerBean reference = 7;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder> 
@@ -1603,20 +1699,20 @@ public final class CycleProto {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          if (bean1Builder_ == null) {
+            result.bean1_ = bean1_;
+          } else {
+            result.bean1_ = bean1Builder_.build();
+          }
           to_bitField0_ |= 0x00000001;
         }
-        if (bean1Builder_ == null) {
-          result.bean1_ = bean1_;
-        } else {
-          result.bean1_ = bean1Builder_.build();
-        }
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          if (bean2Builder_ == null) {
+            result.bean2_ = bean2_;
+          } else {
+            result.bean2_ = bean2Builder_.build();
+          }
           to_bitField0_ |= 0x00000002;
-        }
-        if (bean2Builder_ == null) {
-          result.bean2_ = bean2_;
-        } else {
-          result.bean2_ = bean2Builder_.build();
         }
         if (beansBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004)) {
@@ -1729,7 +1825,7 @@ public final class CycleProto {
       }
       private int bitField0_;
 
-      private org.test.proto.CycleProto.InnerBean bean1_ = null;
+      private org.test.proto.CycleProto.InnerBean bean1_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder> bean1Builder_;
       /**
@@ -1847,7 +1943,7 @@ public final class CycleProto {
         return bean1Builder_;
       }
 
-      private org.test.proto.CycleProto.InnerBean bean2_ = null;
+      private org.test.proto.CycleProto.InnerBean bean2_;
       private com.google.protobuf.SingleFieldBuilderV3<
           org.test.proto.CycleProto.InnerBean, org.test.proto.CycleProto.InnerBean.Builder, org.test.proto.CycleProto.InnerBeanOrBuilder> bean2Builder_;
       /**
@@ -2272,13 +2368,14 @@ public final class CycleProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\013Cycle.proto\"z\n\tInnerBean\022\016\n\006value1\030\001 \001" +
-      "(\003\022\016\n\006value2\030\002 \001(\003\022\016\n\006value3\030\003 \001(\003\022\016\n\006va" +
-      "lue4\030\004 \001(\003\022\016\n\006value5\030\005 \001(\t\022\035\n\treference\030" +
-      "\006 \001(\0132\n.InnerBean\"\\\n\tOuterBean\022\031\n\005bean1\030" +
-      "\001 \001(\0132\n.InnerBean\022\031\n\005bean2\030\002 \001(\0132\n.Inner" +
-      "Bean\022\031\n\005beans\030\003 \003(\0132\n.InnerBeanB\036\n\016org.t" +
-      "est.protoB\nCycleProtoH\001"
+      "\n\013Cycle.proto\"\226\001\n\tInnerBean\022\016\n\006value1\030\001 " +
+      "\001(\003\022\016\n\006value2\030\002 \001(\003\022\024\n\006value3\030\003 \001(\003:\004100" +
+      "0\022\024\n\006value4\030\004 \001(\003:\0041200\022\016\n\006value5\030\005 \001(\t\022" +
+      "\016\n\006value6\030\006 \001(\014\022\035\n\treference\030\007 \001(\0132\n.Inn" +
+      "erBean\"\\\n\tOuterBean\022\031\n\005bean1\030\001 \001(\0132\n.Inn" +
+      "erBean\022\031\n\005bean2\030\002 \001(\0132\n.InnerBean\022\031\n\005bea" +
+      "ns\030\003 \003(\0132\n.InnerBeanB\036\n\016org.test.protoB\n" +
+      "CycleProtoH\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2297,7 +2394,7 @@ public final class CycleProto {
     internal_static_InnerBean_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_InnerBean_descriptor,
-        new java.lang.String[] { "Value1", "Value2", "Value3", "Value4", "Value5", "Reference", });
+        new java.lang.String[] { "Value1", "Value2", "Value3", "Value4", "Value5", "Value6", "Reference", });
     internal_static_OuterBean_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_OuterBean_fieldAccessorTable = new

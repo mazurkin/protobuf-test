@@ -10,13 +10,15 @@ message InnerBean {
 
     optional int64 value2 = 2;
 
-    optional int64 value3 = 3;
+    optional int64 value3 = 3 [default = 1000];
 
-    optional int64 value4 = 4;
+    optional int64 value4 = 4 [default = 1200];
 
     optional string value5 = 5;
 
-    optional InnerBean reference = 6;
+    optional bytes value6 = 6;
+
+    optional InnerBean reference = 7;
 
 }
 
