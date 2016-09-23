@@ -3,7 +3,8 @@
 Serialization takes too much time due to excessive copying from builder to immutable bean.
 
 ```
-# org.test.benchmarks.ProtoBenchmark (bean has 300 fields, 2 fields are set with data, 298 are not set)
+# org.test.benchmarks.ProtoBenchmark
+# bean has 300 fields: 2 fields are set with data, 298 are not set
 
 # Run complete. Total time: 00:10:03
 
