@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mvn clean package -DskipTests
+
+${JAVA_HOME}/bin/java -jar target/benchmarks.jar ProtoBenchmark
