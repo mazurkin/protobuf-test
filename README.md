@@ -18,4 +18,5 @@ ProtoBenchmark.serializeUpstreamSlowProto  avgt       26.588          us/op
 ```
 
 Issue: https://github.com/google/protobuf/issues/2108
+
 Pull request: https://github.com/google/protobuf/pull/2121
